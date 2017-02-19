@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS center</title>
+    <link rel="stylesheet" href="../../fancy.css">
+    <style>
+        li {
+            margin: 10px 0;
+        }
+        .box-a{
+            width: 200px;
+            height: 150px;
+            border: 1px solid #f00;
+            position: relative;
+        }
+        .box-b{
+            width: 150px;
+            height: 100px;
+            border: 1px solid #0f0;
+        }
+
+        .box1{
+            height: 100px;
+            line-height: 100px;
+            text-align: center;
+            width: 100px;
+            border: 1px solid #f00;
+        }
+        .box2{
+            height: 100px;
+            line-height: 100px;
+            width: 100px;
+            border: 1px solid #f00;
+            text-align: center;
+            font-size: 0;
+        }
+        .box3{
+            display: inline-block;
+            vertical-align: middle;
+            height: 50px;
+            width: 50px;
+            border: 1px solid #0f0;
+        }
+        .absolute{
+            position: absolute;
+            top:0;
+            left:0;
+            right:0;
+            bottom:0;
+            margin: auto;
+        }
+        .flexbox{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .table{
+            display: table;
+            height: 300px;
+            width: 300px;
+            border: 1px solid #666;
+        }
+        .table-cell{
+            display: table-cell;
+            padding: 20px;
+            border: 1px solid #00f;
+            vertical-align: middle;
+            text-align: center;
+            word-break: break-all;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>文字垂直居中</h2>
+    <ul>
+        <li>非常简单，确保父元素 height = line-height，且 text-align: center;</li>
+    </ul>
+    <div class="box1">
+        toxichl
+    </div>
+    <ul>
+        <li>注意，一旦字符数太多，这种方法就会出现问题，就像这样:</li>
+    </ul>
+    <div class="box1">
+        toxichltoxichltoxichltoxichl
+    </div>
+    <ul>
+        <li>可以设置overflow:hidden来隐藏，像这样：</li>
+    </ul>
+    <div class="box1" style="overflow: hidden">
+        toxichltoxichltoxichltoxichl
+    </div>
+    <ul>
+        <li>总感觉不够优雅，所以说，记住这种方式的缺点，<b>不能存在多行文字</b></li>
+        <li>因为这种方式设置了line-height，所以即使设置 word-break: break-all，也一定会溢出到下一行</li>
+    </ul>
+
+    <br>
+
+    <h2>文字垂直居中 - 多行文本解决方案 - table</h2>
+    <ul>
+        <li>设置父元素： display: table, 设置子元素：display: table-cell</li>
+        <li>父元素要定宽高，子元素宽高不用设置，会自动扩宽到父元素的宽高</li>
+        <li>子元素必须设置word-break: break-all;，谨记！！</li>
+    </ul>
+    <div class="table">
+        <div class="table-cell">3123131232222222222222312312312321312312222222222222222222222222222222222</div>
+    </div>
+
+    <h2>块状元素居中，关键点：</h2>
+    <ul>
+        <li>需要定父元素的高度，因为用到了line-height</li>
+        <li>需要居中块状元素设置为inline-block元素，然后用vertical-align: middle;配合父元素的text-align: center;和line-height来实现</li>
+    </ul>
+    <div class="box2">
+        <div class="box3"></div>
+    </div>
+
+
+    <h2>块状元素居中 - 最粗暴也是最简单的方式</h2>
+    <ul>
+        <li>需要居中的元素定位为 position: absolute;</li>
+        <li>注意，相应的，父级元素要设置为 position: relative;</li>
+        <li>同时设置子元素:top:0;
+            left:0;
+            right:0;
+            bottom:0;
+            margin: auto;</li>
+    </ul>
+    <div class="box-a">
+        <div class="box-b absolute"></div>
+    </div>
+
+    <h2>块状元素居中 - flexbox</h2>
+    <ul>
+        <li>非常简单，设置父元素：            display: flex;
+            align-items: center;
+            justify-content: center;即可</li>
+    </ul>
+    <div class="box-a flexbox">
+        <div class="box-b "></div>
+    </div>
+
+    <h2>嵌套居中 - flexbox</h2>
+    <div class="box-a flexbox">
+        <div class="box-b flexbox">123231</div>
+    </div>
+
+    <h2>嵌套居中 - 最直观</h2>
+    <div class="box-a flexbox">
+        <div class="box-b" style="text-align: center; line-height: 100px">123231</div>
+    </div>
+
+    <h2>block和inline元素混合居中，关键点：</h2>
+    <ul>
+        <li>去除div和span之间的间隙需要设置父元素的font-size为0，然后独立设置span的font-size</li>
+        <li>需要设置div的vertical-align为middle才能使div和span在同一水平线上</li>
+    </ul>
+    <div style="width:200px; text-align: center; height:150px; border: 1px solid #ff0000; line-height: 150px;
+    font-size: 0">
+        <div style="vertical-align:middle; width:30px; height:30px; background: #7e8c8d;
+                display:inline-block"></div>
+        <span style="vertical-align:top; font-size: 15px">toxichl</span>
+    </div>
+
+    <div class="title">
+        <h5>我想这些已经够用了，较为全面的12种方式请参考：
+            <a href="http://www.cnblogs.com/ang-/p/5767561.html">CSS垂直居中</a>
+        </h5>
+    </div>
+
+</body>
+</html>

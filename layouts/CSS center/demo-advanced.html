@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS center advanced application</title>
+    <style>
+        .content-wrapper{
+            height: auto;
+            width: 100px;
+            background: #ececec;
+        }
+        .table-wrapper{
+            height: 50px;
+            width: 100%;
+            border-bottom: 1px solid #888;
+            display: table;
+        }
+        .table-content{
+            display: table-cell;
+            vertical-align: middle;
+            text-align: center;
+            word-break: break-all;
+            font-size: 14px;
+            padding: 0 10px;
+        }
+        .ellipsis-2l {
+            overflow : hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;    /* 数值代表显示几行 */
+            -webkit-box-orient: vertical;
+        }
+    </style>
+</head>
+<body>
+    <h2>CSS 水平垂直居中 高级应用</h2>
+
+    <h3>1 实现多个块，宽高相等，内部的字体最多允许两行，溢出显示省略号</h3>
+
+    <ul>
+        基本结构
+        <pre>
+        div(table)
+            div(table-cell)
+                div(用来省略文字)
+        </pre>
+    </ul>
+
+    <div class="content-wrapper">
+        <div class="table-wrapper">
+            <div class="table-content">
+                <div class="ellipsis-2l">123213213123123123312312321312312312312312312</div>
+            </div>
+        </div>
+        <div class="table-wrapper">
+            <div class="table-content">
+                <div class="ellipsis-2l">123213123</div>
+            </div>
+        </div>
+        <div class="table-wrapper">
+            <div class="table-content">
+                <div class="ellipsis-2l">231</div>
+            </div>
+        </div>
+        <div class="table-wrapper">
+            <div class="table-content">
+                <div class="ellipsis-2l">12323132</div>
+            </div>
+        </div>
+        <div class="table-wrapper">
+            <div class="table-content">
+                <div class="ellipsis-2l">12323232</div>
+            </div>
+        </div>
+        <div class="table-wrapper">
+            <div class="table-content">
+                <div class="ellipsis-2l">213222</div>
+            </div>
+        </div>
+        <div class="table-wrapper">
+            <div class="table-content">
+                <div class="ellipsis-2l">23123123123123</div>
+            </div>
+        </div>
+        <div class="table-wrapper">
+            <div class="table-content">
+                <div class="ellipsis-2l">312332323</div>
+            </div>
+        </div>
+        <div class="table-wrapper">
+            <div class="table-content">
+                <div class="ellipsis-2l">3213233232313123</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

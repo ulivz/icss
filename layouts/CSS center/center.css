@@ -1,0 +1,23 @@
+.wrapper {
+    height: 500px;
+    width: 400px;
+    border: 1px solid;
+}
+
+#floater {
+    float: left;
+    height: 50%;
+    margin-bottom: -120px; /*240px/2*/
+}
+
+#content {
+    clear: both;
+    width: 300px;
+    margin: 0 auto;
+    height: 240px;
+    position: relative;
+    border: 1px solid red;
+    line-height: 240px;
+    text-align: center;
+
+}
