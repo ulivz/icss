@@ -1,6 +1,10 @@
 # cream.css
 🍧 essence of css, quickly to use, a very useful css library
 
+# 这个库适合谁?
+
+适合已经有一定CSS基础，但是但是知识结构还未形成体系的FED。
+
 # 代码段
 
 	下述代码段非常实用，可以拿来即用，非常适合CSS初学者
