@@ -1,7 +1,9 @@
 # is.css
-A very useful css library
+🍧 essence of css, quickly to use, a very useful css library
 
 # 代码段
+
+	下述代码段非常实用，可以拿来即用，非常适合CSS初学者
 
 - 清除浮动
 - Flexbox
@@ -20,6 +22,9 @@ A very useful css library
 
 
 # 布局
+
+
+	下述布局配备有Demo，演示详细，这些知识也是衡量一个FED前端水平的必备知识
 
 - CSS 垂直居中
 - CSS Flexbox
