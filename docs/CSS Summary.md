@@ -1,4 +1,4 @@
-# CSS 上下文
+# 格式化上下文
 
 - BFC
 
@@ -7,7 +7,16 @@
 
 - IFC
 
-# CSS 选择器
+# 层叠上下文
+
+http://www.zhangxinxu.com/wordpress/2016/01/understand-css-stacking-context-order-z-index/
+
+# 盒型
+
+- border-box
+- content-box
+
+# 选择器
 
 - +
 - ~
@@ -15,7 +24,8 @@
 - first-child
 - last-child
 
-# CSS 布局
+# 布局
+
 ## 基本布局属性
 
 - float
@@ -33,13 +43,15 @@
 - Sticky Footer
 - 相对布局
 
-# CSS 变换
+# 变换
+
 ## 基本属性
 
 - transform
 - scale 
 
-# CSS 动画
+# 动画
+
 ## 基本动画属性
 
 - transition
