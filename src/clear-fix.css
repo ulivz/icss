@@ -1,0 +1,17 @@
+/* Clear float
+   ========================================================================== */
+
+/* for IE6/7 Maxthon2 */
+.clearfix {
+	zoom: 1;
+}
+
+/* for FF/chrome/opera/IE8 */
+.clearfix :after {
+	clear: both;
+	content: '.';
+	display: block;
+	width: 0;
+	height: 0;
+	visibility: hidden;
+}

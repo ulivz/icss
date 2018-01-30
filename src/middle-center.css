@@ -1,0 +1,104 @@
+/* vertical horizontal center
+   ========================================================================== */
+
+/* 水平居中 - horizontal center
+   ========================================================================== */
+
+/* For inline */
+.center-inline {
+	height: 100px;
+	line-height: 100px; /* Must be equal to height */
+	text-align: center;
+}
+
+/* For block */
+.center-block {
+	height: 100px;
+	line-height: 100px;
+}
+
+.center-block-content {
+	display: inline-block;
+}
+
+/* 垂直居中 - vertical center
+   ========================================================================== */
+
+/*
+    <div class="fancy-vertical-center-container">content</div>
+
+    优点：1.兼容所有浏览器； 2.当没有足够的空间时，文字不会被切断
+    缺点：1.只对行内有效（不能块级元素）； 2.文字多行会出问题
+*/
+
+.fancy-vc-text {
+	height: 100px;
+	line-height: 100px; /* Must be equal to height */
+}
+
+/*
+    <div class="fancy-vertical-center-container-2">content</div>
+
+    优点：1.兼容所有浏览器； 2.不需要嵌套的标签
+    缺点：1.当没有足够的空间时，内容会消失
+*/
+
+.fancy-vc-position {
+	height: 100px;
+	position: absolute;
+	top: 50%;
+	margin-top: -50px; /* Half of the negative height  */
+	overflow: hidden;
+}
+
+/*
+    <div id="container">
+        <div id="content">content</div>
+    </div>
+
+    优点：1.内容可以动态改变高度； 2.当容器没有足够的空间时，内容不会被切断
+    缺点：1.IE低版本不支持, 2.需要很多嵌套的标签
+*/
+.fancy-vc-table {
+	height: 300px;
+	display: table;
+}
+
+.fancy-vc-table-cell {
+	display: table-cell;
+	vertical-align: middle;
+}
+
+/*
+    兼容ie6-7的写法
+    <div class="fancy-vc-table">
+        <div class="fancy-vc-table-cell">
+            <div class="fancy-vc-table-content">content</div>
+        </div>
+    </div>
+*/
+
+.fancy-vc-table-ie {
+	height: 300px;
+	width: 300px;
+	display: table;
+	position: relative;
+	float: left;
+}
+
+.fancy-vc-table-cell {
+	display: table-cell;
+	vertical-align: middle;
+	text-align: center;
+	padding: 10px;
+	*position: absolute;
+	*top: 50%;
+	*left: 50%;
+}
+
+.fancy-vc-table-content {
+	*position: relative;
+	*top: -50%;
+	*left: -50%;
+}
+

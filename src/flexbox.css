@@ -1,0 +1,21 @@
+/* Flexbox
+   ========================================================================== */
+.flex-container {
+	display: flex;
+}
+
+.inline-flex-container {
+	display: -webkit-flex; /* Safari */
+	display: flex;
+}
+
+/* elements that requires a fixed width  */
+.flex-item-stable {
+	flex: 0 0 100px;
+	width: 100px
+}
+
+/* elements that requires responsive width   */
+.flex-item-responsive {
+	flex: 1
+}
